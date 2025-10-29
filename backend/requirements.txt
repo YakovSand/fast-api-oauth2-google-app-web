@@ -1,0 +1,7 @@
+fastapi # Web framework for building APIs
+uvicorn # ASGI server for FastAPI
+pyjwt # For handling JSON Web Tokens
+aiohttp # For making asynchronous HTTP requests
+sqlalchemy # ORM for database interactions
+databases # Async database support for SQLAlchemy
+pydantic_settings # For managing settings with Pydantic
