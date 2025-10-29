@@ -2,7 +2,10 @@ import urllib.parse
 
 from config import settings
 
+# Function to generate Google OAuth 2.0 redirect URL
 def generate_oauth_google_redirect_url():
+    # Define the query parameters for the OAuth 2.0 authorization request
+    # See https://developers.google.com/identity/protocols/oauth2/web-server#creatingclient
     query_params = {
         "redirect_uri": "http://localhost:3000/auth/google",
         "client_id": settings.OAUTH_GOOGLE_CLIENT_ID,

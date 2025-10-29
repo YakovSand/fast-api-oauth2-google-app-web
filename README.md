@@ -2,6 +2,26 @@
 
 This sample project demonstrates the OAuth2 authentication process using Google Auth Platform. 
 
+## Prerequisites
+
+Before running this project, make sure you have:
+
+1. **OAuth2 Client**: You need to have an OAuth2 client created in Google Cloud Platform (GCP) to use Google authentication. Follow these steps to create your OAuth2 client:
+   - Go to [Google Cloud Console](https://console.cloud.google.com/).
+   - Create a new project or select an existing project.
+   - Navigate to **APIs & Services > Credentials**.
+   - Click **Create Credentials** and select **OAuth 2.0 Client IDs**.
+   - Set up the OAuth consent screen and create the client ID.
+   - Note the **Client ID** and **Client Secret** provided, as you will need these for configuring the backend.
+
+More details: https://developers.google.com/identity/protocols/oauth2/web-server#python_1
+
+2. **Node.js** and **npm**: Ensure you have Node.js and npm installed for the frontend setup.
+   - Download and install Node.js from [here](https://nodejs.org/).
+
+3. **Python 3.x**: Ensure you have Python 3 installed for the backend setup.
+   - Download and install Python from [here](https://www.python.org/).
+
 ## Setup Instructions
 
 Follow the steps below to run both the backend and frontend.
@@ -83,5 +103,4 @@ Follow the steps below to run both the backend and frontend.
 ---
 
 ## Notes
-- Ensure you have Node.js and Python installed on your machine.
 - If you encounter any issues, check that all dependencies are correctly installed and your virtual environment is activated.

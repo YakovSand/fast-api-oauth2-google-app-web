@@ -7,13 +7,21 @@ from fastapi import Body
 import aiohttp
 import jwt
 
+# Define API router for authentication-related endpoints
 router = APIRouter(prefix="/auth")
 
+# Endpoint to get Google OAuth 2.0 redirect URL
+# When accessed, this endpoint redirects the client to the Google OAuth consent screen
+# for user authentication and authorization
 @router.get("/google/url")
 def get_google_oauth_redirect_url():
     uri = generate_oauth_google_redirect_url()
     return RedirectResponse(uri, status_code=302)
 
+# Endpoint to handle Google OAuth 2.0 callback
+# This endpoint receives the authorization code from Google after user consent
+# It exchanges the code for access and ID tokens, then decodes the ID token to retrieve user information
+# Finally, it returns the user data as a JSON response (to frontend for further processing)
 @router.post("/google/callback")
 async def google_oauth_callback(code: Annotated[str, Body(embed=True)]):
     google_token_url = "https://oauth2.googleapis.com/token"
@@ -45,4 +53,3 @@ async def google_oauth_callback(code: Annotated[str, Body(embed=True)]):
         user_data = jwt.decode(id_token, algorithms=["RS256"], options={"verify_signature": False})
 
     return {"user_data": user_data}
-    # return {"message": "Callback received", "code": code}
