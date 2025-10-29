@@ -2,6 +2,7 @@
   import Home from '@/components/Home.vue'
   import AuthGoogle from '@/components/AuthGoogle.vue'
 
+
   // Define application routes
   // Home route and Google authentication route
   // Each route is associated with a specific component
